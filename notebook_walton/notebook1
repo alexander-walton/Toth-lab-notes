@@ -9,3 +9,13 @@ ffgf
 
 ```
 d
+
+ssh awalton@condo2017.its.iastate.edu
+
+salloc -N 1 -n 16 -t 2:00:00
+
+ls /ptmp/toth-lab/severin/00_rawdata | xargs -I xx ln -s /ptmp/toth-lab/severin/00_rawdata/xx
+
+~/ptmp-Toth/alex/01_QC$ rsync -avz -e ssh fastqcOut/*html alexanderwalton@awalton.student.iastate.edu:/Users/alexanderwalton/Desktop/projects/rnaseqtutorial
+
+homework: multiqc, background reading on illumina, pacbio, and nanopore. make summaries of each, limitations, what are they used for.
