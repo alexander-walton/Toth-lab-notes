@@ -20,3 +20,8 @@ Samtools is a set of utilities that manipulate alignments in the BAM format (bin
 [manual](http://daehwankimlab.github.io/hisat2/manual/)
 
 HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome
+
+## featureCounts
+[paper](https://academic.oup.com/bioinformatics/article/30/7/923/232889#2676612)
+In module subread.
+a software program developed for counting reads to genomic features such as genes, exons, promoters and genomic bins. A read summarization program.

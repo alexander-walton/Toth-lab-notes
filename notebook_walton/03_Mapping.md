@@ -52,7 +52,7 @@ hisatmap
 #!/bin/bash
 set -o xtrace
 # set the reference index:
-GENOME="/work/LAS/amytoth-lab/awalton/03_hitsat/fuscatus.fasta""
+GENOME="/work/LAS/amytoth-lab/awalton/03_hitsat/fuscatus"
 # make an output directory to store the output aligned files
 mkdir -p hisatOuty
 # set that as the output directory
@@ -69,7 +69,7 @@ module purge
 module load hisat2
 module load samtools
 
-OUTPUT=$(basename ${R1_FQ} |cut -f 1 -d "_");
+OUTPUT=$(basename ${R1_FQ} |cut -f 1,2 -d "_");
 
 hisat2 \
   -p ${p} \
@@ -84,7 +84,8 @@ rm $ODIR\/${OUTPUT}.sam
 
 
 loop_hisat2.sh
-script that will run through as fasq files and map for every paired read of every sample
+script that will run through all fasq files and map for every paired read of every sample
+
 ```
 #!/bin/bash
 
@@ -108,3 +109,9 @@ fq2=$(echo $fq1 | sed 's/1/2/g');
 /work/LAS/amytoth-lab/awalton/03_hitsat/hisatmap ${fq1} ${fq2};
 done >& hisat2_1.log
 ```
+to submit the job: sbatch loop_hisat2
+
+####I also needed to make both the hisatmap and the loop_hisat2 files executeable with the code
+```chmod 755 hisatmap```
+#and
+```chmod 755 loop_hisat2```
