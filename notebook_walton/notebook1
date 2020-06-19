@@ -8,11 +8,13 @@ d
 ffgf
 
 ```
-d
+
 
 ssh awalton@condo2017.its.iastate.edu
 
 salloc -N 1 -n 16 -t 2:00:00
+
+sbatch #submit a slurm job 
 
 ls /ptmp/toth-lab/severin/00_rawdata | xargs -I xx ln -s /ptmp/toth-lab/severin/00_rawdata/xx
 
@@ -23,3 +25,7 @@ homework: multiqc, background reading on illumina, pacbio, and nanopore. make su
 rsync -avz -e ssh GCA_010416935.1_CU_Pfus_HIC_assembly_report.txt genome_assemblies.tar awalton@condo2017.its.iastate.edu:/work/LAS/amytoth-lab/rawdata/Genomes
 
 rsync -avz -e ssh fuscatusHIC.gff awalton@condo2017.its.iastate.edu:/work/LAS/amytoth-lab/rawdata/Genomes
+
+rsync -avz -e ssh awalton@condo2017.its.iastate.edu:/work/LAS/amytoth-lab/rawdata/PFUS_RNAseq/outfastqc .
+
+rsync -avz -e ssh awalton@condo2017.its.iastate.edu://work/LAS/amytoth-lab/awalton/03_hitsat/counts2/Foundress_count .
